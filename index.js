@@ -15,25 +15,25 @@ app.post('/check-federal-id', (req, res) => {
 
     if (num.length == 11) {
     cpf.isValid(num) ? res.send({
-        valid: 1,
+        valid: "1",
         type: 'cpf',
         message: params.success}) : res.send({
-            valid: 0,
+            valid: "0",
             type: 'cpf',
             message: params.error})
     }
 
     else if (num.length == 14) {
     cnpj.isValid(num) ? res.send({
-        valid: 1,
+        valid: "1",
         type: 'cnpj',
         message: params.success}) : res.send({
-            valid: 0,
+            valid: "0",
             type: 'cnpj',
             message: params.error})
     } else {
 
-        res.send({valid: 0, message: params.error})
+        res.send({valid: "0", message: params.error})
     }
 
 })
