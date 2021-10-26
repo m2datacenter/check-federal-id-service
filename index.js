@@ -5,6 +5,8 @@ const {cpf, cnpj} = require('cpf-cnpj-validator')
 const app = express()
 app.use(bodyParser.json())
 
+const port = process.env.PORT || 3000
+
 app.post('/check-federal-id', (req, res) => {
     const params = req.body
 
@@ -37,4 +39,4 @@ app.post('/check-federal-id', (req, res) => {
 })
 
 
-app.listen(3333, ()=> console.log('start server'))
+app.listen(port, () => console.log('start server'))
