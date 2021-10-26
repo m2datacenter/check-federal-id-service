@@ -7,10 +7,6 @@ app.use(bodyParser.json())
 
 const port = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-    res.send('oi ok')
-})
-
 app.post('/check-federal-id', (req, res) => {
     const params = req.body
 
